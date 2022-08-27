@@ -1,0 +1,7 @@
+
+SharedComponent :- 
+    Its collection of reusable components
+
+    1.ProctsList : for show all products list
+    2.CartList : for show all cart list
+

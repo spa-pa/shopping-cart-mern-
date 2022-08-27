@@ -1,0 +1,7 @@
+
+Structure components :- 
+    It contains structure components  responsible for structure
+
+    1.Header : contains all header part
+    2.Main : contains all body elements
+    3.Footer : contains all footer elements 

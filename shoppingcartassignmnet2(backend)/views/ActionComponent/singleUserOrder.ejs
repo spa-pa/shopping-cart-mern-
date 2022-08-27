@@ -1,0 +1,69 @@
+<head>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        .container1{
+            width: 100%;
+            height: 86.5%;
+            
+            padding: 5% 10% 0 10%;
+
+            
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+  
+          
+          
+       
+    <body>
+     <%- include('../LayoutComponent/header') %>
+    
+    <div class="container1">
+        
+        <table class="table" style="margin-top: 2%;">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Useremail</th>
+                <th scope="col">Address</th>
+                <th scope="col">Date</th>
+                <th scope="col">Total</th>
+                <th scope="col">Order</th>
+                <th scope="col"></th>
+               
+              </tr>
+            </thead>
+            <tbody>
+                
+        <% ordersList.forEach(customer=>{%>
+     
+            <tr>
+                <th scope="row"><%= customer.useremail %></th>
+                <td><%= customer.address %></td>
+                <td><%= customer.date %></td>
+                <td><%= customer.total %></td>
+               <td>
+                <% customer.cartItems.forEach(items=>{%>
+                    <p>id :<%= items._id %>&nbsp;
+                    title :"<%= items.title %>"&nbsp;
+                    count :<%= items.count %>&nbsp;
+                    price :<%= items.price %></br>
+                    <%}) %>
+                </td>
+                <td><button class="btn btn-danger" ><a href="/admin/deleteOrder?id=<%= customer._id %>&email=<%= customer.useremail %>" style="
+                    color: white;
+            text-decoration: none;
+                ">delete</a></button></td>
+              </tr>
+        <%})
+        %>
+    </tbody>
+</table>
+    
+    </div>
+    
+    
+    </body>

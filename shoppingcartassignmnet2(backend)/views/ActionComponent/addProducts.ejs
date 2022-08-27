@@ -1,0 +1,58 @@
+<head>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        .container1{
+            width: 100%;
+            height: 86.5%;
+            
+            padding: 5% 10% 0 10%;
+
+            
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+  
+          
+          
+       
+    <body>
+     <%- include('../LayoutComponent/header') %>
+    <div class="container1">
+       
+        <form method="POST" action="/admin/addproduct">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Product Title</label>
+              <input class="form-control" type="text" placeholder="product title" name="title" id="title" autocomplete="off">          
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Description</label>
+                <textarea class="form-control"  placeholder="product description"   rows="3" name="description" id="description" autocomplete="off"></textarea>          
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Product AvailableSizes</label>
+                <input class="form-control" type="text" placeholder="use , operator   ex. XX,L" name="availableSizes" id="availableSizes" autocomplete="off">          
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Product Price</label>
+                <input class="form-control" type="text" placeholder="product price" name="price" id="price" autocomplete="off">          
+              </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+            <button  class="btn btn-primary"><a href="/admin/products" style="
+                color: white;
+        text-decoration: none;">Cancle</a></button>
+            <% if(message){ %>
+                <h3 style="color:red;"><%=message%></h3>
+                <% } %>
+          </form>
+
+    </div>
+    <%- include('../LayoutComponent/footer') %> 
+    
+    
+    </body>
+    
+    
